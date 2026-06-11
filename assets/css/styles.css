@@ -1,0 +1,260 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fdf6fb;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.contenedor{
+    margin-top: 100px;
+    width: 1250px;
+    padding: 100px;
+    background: #fdf6fb;
+}
+
+header{
+    background-color: #f0e4f0;
+    color: #2d1b3d;
+    border-radius: 14px;
+    text-align: center;
+    display: flex;
+    position: fixed;
+    top: 16px;
+    width: 1100px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.logo img{
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.logo h1{
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: center;
+    background-color: #f0e4f0;
+}
+
+.navegacion ul{
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.navegacion ul li{
+    position: relative;
+}
+
+.navegacion ul li a{
+    color: #a87cc0;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    transition: background-color 0.3 ease, color 0.3 ease;
+}
+
+.navegacion ul li a:hover,
+.navegacion ul li a:focus{
+    background-color: #a87cc0;
+    color: #fdf6fb;
+}
+
+.navegacion ul li a::after{
+    content: "";
+    display: block;
+    height: 3px;
+    background: #a87cc0;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.navegacion ul li a:hover::after,
+.navegacion ul li a:focus::after{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+main{
+    background: #fdf6fb;
+}
+
+.hero{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero-left{
+    max-width: 500px;
+}
+
+.presentacion{
+    font-family: "DM Mono", sans-serif;
+    font-size: 12px;
+    color: #e8a4c8;
+    margin: 12px 0 0 0;
+    max-width: 500px;
+}
+
+.titulo{
+    font-family: "Playfair Display", serif;
+    font-size: 64px;
+    color: #2d1b3d;
+    font-weight: 100;
+    margin: 0;
+}
+
+.segundo{
+    color: #7c4d99;
+    font-style: italic;
+}
+
+.descripcionPrincipal{
+    font-family: "DM Mono", serif;
+    font-size: 16px;
+    color: #7c4d99;
+    margin: 12 0 0 0;
+}
+
+.primario{
+    background: linear-gradient(to right,  #7c4d99,#8759a4,#bc8fd7,#8759a4,#7c4d99);
+    background-size: 200% 100%;
+    background-position: left center;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-family: "DM Mono", serif;
+    font-size: 12px;
+    transition: background-position 0.5s ease;
+}
+
+.primario:hover{
+    background-position: 100% 0;
+}
+
+.secundario{
+    background: linear-gradient(to right, #dc8ab5,#e297bf,#f7c4df,#e297bf,#dc8ab5);
+    background-size: 200% 100%;
+    background-position: left center;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-family: "DM Mono", serif;
+    font-size: 12px;
+    transition: background-position 0.5s ease;
+}
+
+.secundario:hover{
+    background-position: 100% 0;
+}
+
+.hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      animation: fadeIn 0.8s 0.5s forwards;
+    }
+ 
+    .hero-avatar-wrap {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+    }
+ 
+    .hero-avatar-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #fefefe, #d7d7d7);
+      border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+      width: 400px;
+      height: 400px;
+    }
+ 
+    .hero-badge {
+      position: absolute;
+      bottom: 30px;
+      right: -20px;
+      background: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: 'DM Mono', sans-serif;
+      font-size: 12px;
+      color: #000;
+    }
+ 
+    .hero-badge-2 {
+      position: absolute;
+      top: 30px;
+      left: -20px;
+      background: #a87cc0;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: 'DM Mono', sans-serif;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .deco{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+    }
+
+    .star{
+        position: absolute;
+        top: 100px;
+        right: 700px;
+        size: 80px;
+    }
+
+    .star-2{
+        position: absolute;
+        top: 200px;
+        right: 50px;
+        size: 80px;
+    }
+
+    .star-3{
+        position: absolute;
+        top: 600px;
+        right: 550px;
+        size: 80px;
+    }
