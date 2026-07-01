@@ -258,3 +258,70 @@ main{
         right: 550px;
         size: 80px;
     }
+
+    .acercade{
+        padding: 200px 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; 
+    }
+
+    .titulo-2{
+        font-family: "Playfair Display", serif;
+        font-size: 42px;
+        color: #2d1b3d;
+        font-weight: 100;
+        margin: 0;
+    }
+
+.acercade-left{
+    border: solid #f0e4f0 1px;
+    border-radius: 14px;
+    max-width: 700px;
+    padding: 10px;
+}
+
+.acercade-descripcion{
+    font-family: "DM Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #7c4d99;
+}
+
+.resaltar{
+    font-weight: bold;
+    color: #2d1b3d;
+}
+
+.acercade-rigth{
+    width: 500px;
+}
+
+.titulo-chips{
+    font-family: "DM Mono", sans-serif;
+    font-size: 12px;
+    color: #a87cc0;
+    font-weight: normal;
+}
+
+.chips-full{
+    background: #e8a4c8;
+    color: #000;
+    border-radius: 50px;
+    font-family: "DM Mono", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 6px 16px;
+}
+
+.chips{
+    color: #a87cc0;
+    border: dashed #a87cc0 1px;
+    border-radius: 50px;
+    font-family: "DM Mono", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 6px 16px;
+}
