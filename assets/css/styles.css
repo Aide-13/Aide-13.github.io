@@ -29,6 +29,7 @@ header{
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    border: solid #fdf6fb 1px;
 }
 
 .logo{
@@ -395,4 +396,36 @@ main{
     font-weight: normal;
     font-size: 12px;
     cursor: pointer;
+}
+
+.proyecto-secundario{
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+    justify-content: space-between;
+}
+
+.proyecto{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 600px;
+    height: 280px;
+}
+
+.imagen-2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: #2D1B3D;
+    background: linear-gradient(90deg, rgba(45, 27, 61, 1) 0%, rgba(124, 77, 153, 1) 50%, rgba(168, 124, 192, 1) 100%);
+    min-height: 200px;
+    border-radius:14px 14px 0 0 ;
+}
+
+.detalles-2{
+    background: #fff;
+    border-radius: 0 0 14px 14px;
+    padding: 24px;
+    height: 280px;
 }
