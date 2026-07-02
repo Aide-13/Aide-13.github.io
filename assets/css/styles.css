@@ -11,9 +11,9 @@ body{
 
 .contenedor{
     margin-top: 100px;
-    width: 1250px;
     padding: 100px;
     background: #fdf6fb;
+    width: 90%;
 }
 
 header{
@@ -281,7 +281,7 @@ main{
 .acercade-left{
     border: solid #f0e4f0 1px;
     border-radius: 14px;
-    max-width: 700px;
+    width: 60%;
     padding: 10px;
 }
 
@@ -298,7 +298,7 @@ main{
 }
 
 .acercade-rigth{
-    width: 500px;
+    width: 30%;
 }
 
 .titulo-chips{
@@ -316,6 +316,7 @@ main{
     font-weight: normal;
     font-size: 12px;
     padding: 6px 16px;
+    margin: 5px 0;
 }
 
 .chips{
@@ -335,7 +336,7 @@ main{
 }
 
 .proyecto-principal{
-    max-width: 1300px;
+    width: 100%;
     border-radius: 14px;
     display: flex;
     flex-direction: row;
@@ -349,7 +350,7 @@ main{
     align-content: center;
     background: #2D1B3D;
     background: linear-gradient(90deg, rgba(45, 27, 61, 1) 0%, rgba(124, 77, 153, 1) 50%, rgba(168, 124, 192, 1) 100%);
-    min-width: 600px;
+    min-width: 50%;
     border-radius: 14px 0 0 14px;
 }
 
@@ -409,8 +410,7 @@ main{
     display: flex;
     flex-direction: column;
     margin: 20px 0;
-    width: 600px;
-    height: 280px;
+    width: 49%;
 }
 
 .imagen-2{
@@ -427,7 +427,6 @@ main{
     background: #fff;
     border-radius: 0 0 14px 14px;
     padding: 24px;
-    height: 280px;
 }
 
 .publicaciones{
@@ -468,4 +467,78 @@ main{
     font-weight: normal;
     font-size: 12px;
     color: #7c4d99;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2D1B3D;
+    margin: 0;
+    width: 100%;
+}
+
+.desc-foot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.titulo-3{
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    color: #f0e4f0;
+    font-weight: 100;
+    margin: 0;
+}
+
+.tercero{
+    color: #e8a4c8;
+    font-style: italic;
+}
+
+.o{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #f0e4f0;
+}
+
+.contactos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: solid #f0e4f0 1px;
+    width: 200px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.contactos img{
+    width: 24px;
+}
+
+.derechos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    border-top: solid #f0e4f0 1px;
+    width: 90%;
+}
+
+.anio{
+    font-family: "DM Mono", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #f0e4f0;
+}
+
+.derechos img{
+    width: 24px;
 }
