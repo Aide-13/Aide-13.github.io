@@ -116,6 +116,7 @@ main{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 50px 0;
 }
 
 .hero-left{
@@ -260,7 +261,7 @@ main{
     }
 
     .acercade{
-        padding: 200px 0;
+        padding: 200px 0 100px 0;
         margin: 0;
         display: flex;
         flex-direction: row;
@@ -324,4 +325,74 @@ main{
     font-weight: normal;
     font-size: 12px;
     padding: 6px 16px;
+}
+
+.proyectos{
+    background-color: #f0e4f0;
+    border-radius: 24px;
+    padding: 20px;
+}
+
+.proyecto-principal{
+    max-width: 1300px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-top: 30px;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: #2D1B3D;
+    background: linear-gradient(90deg, rgba(45, 27, 61, 1) 0%, rgba(124, 77, 153, 1) 50%, rgba(168, 124, 192, 1) 100%);
+    min-width: 600px;
+    border-radius: 14px 0 0 14px;
+}
+
+.detalles{
+    background: #fff;
+    border-radius: 0 14px 14px 0;
+    padding: 24px;
+}
+
+.titulo-proyecto{
+    font-family: "Playfair Display", sans;
+    font-weight: 300;
+    font-size: 20px;
+    color: #2d1b3d;
+}
+
+.detalles-proyecto{
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #a87cc0;
+}
+
+.p{
+    margin: 20px 0;
+}
+
+.proyecto-chips{
+    background: #f0e4f0;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "DM Mono", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #a87cc0;
+}
+
+.link{
+    background: none;
+    border: none;
+    border-bottom: solid #a87cc0 1px;
+    color: #a87cc0;
+    font-family: "DM Sans", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer;
 }
