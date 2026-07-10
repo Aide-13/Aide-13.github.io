@@ -7,6 +7,7 @@ body{
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .contenedor{
@@ -14,6 +15,7 @@ body{
     padding: 100px;
     background: #fdf6fb;
     width: 90%;
+    box-sizing: border-box;
 }
 
 header{
@@ -24,12 +26,15 @@ header{
     display: flex;
     position: fixed;
     top: 16px;
-    width: 1100px;
+    width: 90%;
+    max-width: 1100px;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     border: solid #fdf6fb 1px;
+    z-index: 100;
+    box-sizing: border-box;
 }
 
 .logo{
@@ -50,6 +55,24 @@ header{
     font-family: "Playfair Display", serif;
     font-size: 20px;
     font-weight: 100;
+}
+
+.menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #7c4d99;
+    border-radius: 2px;
 }
 
 .navegacion{
@@ -108,16 +131,19 @@ header{
 
 main{
     background: #fdf6fb;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero{
     padding: 0;
-    margin: 0;
+    margin: 50px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 50px 0;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .hero-left{
@@ -134,7 +160,7 @@ main{
 
 .titulo{
     font-family: "Playfair Display", serif;
-    font-size: 64px;
+    font-size: clamp(36px, 6vw, 64px);
     color: #2d1b3d;
     font-weight: 100;
     margin: 0;
@@ -149,7 +175,13 @@ main{
     font-family: "DM Mono", serif;
     font-size: 16px;
     color: #7c4d99;
-    margin: 12 0 0 0;
+    margin: 12px 0 0 0;
+}
+
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .primario{
@@ -163,6 +195,7 @@ main{
     font-family: "DM Mono", serif;
     font-size: 12px;
     transition: background-position 0.5s ease;
+    cursor: pointer;
 }
 
 .primario:hover{
@@ -180,6 +213,7 @@ main{
     font-family: "DM Mono", serif;
     font-size: 12px;
     transition: background-position 0.5s ease;
+    cursor: pointer;
 }
 
 .secundario:hover{
@@ -190,25 +224,27 @@ main{
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 500px;
+      width: 100%;
+      max-width: 400px;
       animation: fadeIn 0.8s 0.5s forwards;
+      position: relative;
     }
- 
+
     .hero-avatar-wrap {
-      position: absolute;
-      width: 400px;
-      height: 400px;
+      position: relative;
+      width: min(400px, 80vw);
+      height: min(400px, 80vw);
     }
- 
+
     .hero-avatar-bg {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, #fefefe, #d7d7d7);
       border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-      width: 400px;
-      height: 400px;
+      width: 100%;
+      height: 100%;
     }
- 
+
     .hero-badge {
       position: absolute;
       bottom: 30px;
@@ -219,8 +255,9 @@ main{
       font-family: 'DM Mono', sans-serif;
       font-size: 12px;
       color: #000;
+      white-space: nowrap;
     }
- 
+
     .hero-badge-2 {
       position: absolute;
       top: 30px;
@@ -233,46 +270,20 @@ main{
       color: #fff;
     }
 
-    .deco{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 600px;
-    }
-
-    .star{
-        position: absolute;
-        top: 100px;
-        right: 700px;
-        size: 80px;
-    }
-
-    .star-2{
-        position: absolute;
-        top: 200px;
-        right: 50px;
-        size: 80px;
-    }
-
-    .star-3{
-        position: absolute;
-        top: 600px;
-        right: 550px;
-        size: 80px;
-    }
-
     .acercade{
-        padding: 200px 0 100px 0;
+        padding: 100px 0;
         margin: 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center; 
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
     }
 
     .titulo-2{
         font-family: "Playfair Display", serif;
-        font-size: 42px;
+        font-size: clamp(28px, 4vw, 42px);
         color: #2d1b3d;
         font-weight: 100;
         margin: 0;
@@ -282,7 +293,10 @@ main{
     border: solid #f0e4f0 1px;
     border-radius: 14px;
     width: 60%;
+    min-width: 280px;
+    flex: 2;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .acercade-descripcion{
@@ -299,6 +313,8 @@ main{
 
 .acercade-rigth{
     width: 30%;
+    min-width: 220px;
+    flex: 1;
 }
 
 .titulo-chips{
@@ -309,6 +325,7 @@ main{
 }
 
 .chips-full{
+    display: inline-block;
     background: #e8a4c8;
     color: #000;
     border-radius: 50px;
@@ -316,10 +333,11 @@ main{
     font-weight: normal;
     font-size: 12px;
     padding: 6px 16px;
-    margin: 5px 0;
+    margin: 5px 4px 5px 0;
 }
 
 .chips{
+    display: inline-block;
     color: #a87cc0;
     border: dashed #a87cc0 1px;
     border-radius: 50px;
@@ -327,12 +345,14 @@ main{
     font-weight: normal;
     font-size: 12px;
     padding: 6px 16px;
+    margin: 5px 4px 5px 0;
 }
 
 .proyectos{
     background-color: #f0e4f0;
     border-radius: 24px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .proyecto-principal{
@@ -340,6 +360,7 @@ main{
     border-radius: 14px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0;
     margin-top: 30px;
 }
@@ -350,7 +371,9 @@ main{
     align-content: center;
     background: #2D1B3D;
     background: linear-gradient(90deg, rgba(45, 27, 61, 1) 0%, rgba(124, 77, 153, 1) 50%, rgba(168, 124, 192, 1) 100%);
-    min-width: 50%;
+    min-width: 300px;
+    flex: 1;
+    min-height: 200px;
     border-radius: 14px 0 0 14px;
 }
 
@@ -358,6 +381,9 @@ main{
     background: #fff;
     border-radius: 0 14px 14px 0;
     padding: 24px;
+    flex: 1;
+    min-width: 280px;
+    box-sizing: border-box;
 }
 
 .titulo-proyecto{
@@ -379,6 +405,7 @@ main{
 }
 
 .proyecto-chips{
+    display: inline-block;
     background: #f0e4f0;
     border-radius: 5px;
     padding: 10px;
@@ -386,6 +413,7 @@ main{
     font-weight: normal;
     font-size: 12px;
     color: #a87cc0;
+    margin: 2px 2px 2px 0;
 }
 
 .link{
@@ -402,15 +430,19 @@ main{
 .proyecto-secundario{
     display: flex;
     flex-direction: row;
-    min-height: 500px;
+    flex-wrap: wrap;
+    min-height: auto;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .proyecto{
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
-    width: 49%;
+    margin-top: 20px;
+    max-width: 49%;
+    min-width: 280px;
+    flex: 1;
 }
 
 .imagen-2{
@@ -427,10 +459,12 @@ main{
     background: #fff;
     border-radius: 0 0 14px 14px;
     padding: 24px;
+    box-sizing: border-box;
 }
 
 .publicaciones{
     margin: 100px 0;
+    width: 100%;
 }
 
 .articulo{
@@ -441,7 +475,9 @@ main{
     border-radius: 14px;
     padding: 24px 32px;
     gap: 32px;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
 }
 
 .icono{
@@ -453,6 +489,7 @@ main{
     border-radius: 5px;
     width: 54px;
     height: 44px;
+    flex-shrink: 0;
 }
 
 .titulo-articulo{
@@ -477,6 +514,7 @@ footer{
     background: #2D1B3D;
     margin: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .desc-foot{
@@ -485,12 +523,13 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 50px;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .titulo-3{
     font-family: "Playfair Display", serif;
-    font-size: 42px;
+    font-size: clamp(28px, 5vw, 42px);
     color: #f0e4f0;
     font-weight: 100;
     margin: 0;
@@ -530,6 +569,9 @@ footer{
     padding: 10px 50px;
     border-top: solid #f0e4f0 1px;
     width: 90%;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
 }
 
 .anio{
@@ -541,4 +583,126 @@ footer{
 
 .derechos img{
     width: 24px;
+}
+
+@media (max-width: 1024px){
+    .contenedor{
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 900px){
+    .contenedor{
+        margin-top: 90px;
+    }
+
+    header{
+        flex-wrap: wrap;
+    }
+
+    .acercade-left,
+    .acercade-rigth{
+        width: 100%;
+    }
+
+    .hero{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-left{
+        max-width: 100%;
+    }
+
+    .botones{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px){
+    .contenedor{
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header{
+        flex-wrap: nowrap;
+        width: calc(100% - 32px);
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .navegacion{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #f0e4f0;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .navegacion.abierto{
+        display: block;
+    }
+
+    .navegacion ul{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .proyecto-secundario{
+        flex-direction: column;
+    }
+
+    .proyecto{
+        width: 100%;
+    }
+
+    .proyecto-principal{
+        flex-direction: column;
+    }
+
+    .imagen{
+        border-radius: 14px 14px 0 0;
+        min-height: 180px;
+    }
+
+    .detalles{
+        border-radius: 0 0 14px 14px;
+    }
+}
+
+@media (max-width: 480px){
+    .logo h1{
+        font-size: 16px;
+    }
+
+    .presentacion{
+        font-size: 11px;
+    }
+
+    .acercade-descripcion,
+    .detalles-proyecto{
+        font-size: 14px;
+    }
+
+    .hero-badge,
+    .hero-badge-2{
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .derechos{
+        flex-direction: column;
+    }
+    .articulo{
+        flex-wrap: wrap;
+    }
 }
