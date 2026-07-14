@@ -10,6 +10,71 @@ body{
     overflow-x: hidden;
 }
 
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}
+
+.hero-left .presentacion,
+.hero-left .titulo,
+.hero-left .descripcionPrincipal,
+.hero-left .botones{
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.hero-left .presentacion{ animation-delay: 0.1s; }
+.hero-left .titulo{ animation-delay: 0.25s; }
+.hero-left .descripcionPrincipal{ animation-delay: 0.4s; }
+.hero-left .botones{ animation-delay: 0.55s; }
+
+.hero-right{
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.visible:nth-child(1){ transition-delay: 0s; }
+.reveal-stagger.visible:nth-child(2){ transition-delay: 0.12s; }
+.reveal-stagger.visible:nth-child(3){ transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce){
+    .hero-left .presentacion,
+    .hero-left .titulo,
+    .hero-left .descripcionPrincipal,
+    .hero-left .botones,
+    .hero-right{
+        animation: none;
+        opacity: 1;
+    }
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 .contenedor{
     margin-top: 100px;
     padding: 100px;
@@ -35,6 +100,19 @@ header{
     border: solid #fdf6fb 1px;
     z-index: 100;
     box-sizing: border-box;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+header.oculto{
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+    header{
+        transition: none;
+    }
 }
 
 .logo{
@@ -137,7 +215,7 @@ main{
 
 .hero{
     padding: 0;
-    margin: 50px 0;
+    margin: 100px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -175,7 +253,7 @@ main{
     font-family: "DM Mono", serif;
     font-size: 16px;
     color: #7c4d99;
-    margin: 12px 0 0 0;
+    margin: 12px 0 ;
 }
 
 .botones{
@@ -221,73 +299,73 @@ main{
 }
 
 .hero-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 400px;
-      animation: fadeIn 0.8s 0.5s forwards;
-      position: relative;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s 0.5s forwards;
+    position: relative;
+}
 
-    .hero-avatar-wrap {
-      position: relative;
-      width: min(400px, 80vw);
-      height: min(400px, 80vw);
-    }
+.hero-avatar-wrap {
+    position: relative;
+    width: min(400px, 80vw);
+    height: min(400px, 80vw);
+}
 
-    .hero-avatar-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #fefefe, #d7d7d7);
-      border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-      width: 100%;
-      height: 100%;
-    }
+.hero-avatar-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fefefe, #d7d7d7);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    width: 100%;
+    height: 100%;
+}
 
-    .hero-badge {
-      position: absolute;
-      bottom: 30px;
-      right: -20px;
-      background: #fff;
-      border-radius: 5px;
-      padding: 10px;
-      font-family: 'DM Mono', sans-serif;
-      font-size: 12px;
-      color: #000;
-      white-space: nowrap;
-    }
+.hero-badge {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'DM Mono', sans-serif;
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+}
 
-    .hero-badge-2 {
-      position: absolute;
-      top: 30px;
-      left: -20px;
-      background: #a87cc0;
-      border-radius: 5px;
-      padding: 10px;
-      font-family: 'DM Mono', sans-serif;
-      font-size: 12px;
-      color: #fff;
-    }
+.hero-badge-2 {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    background: #a87cc0;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'DM Mono', sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
 
-    .acercade{
-        padding: 100px 0;
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 40px;
-    }
+.acercade{
+    padding: 100px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-    .titulo-2{
-        font-family: "Playfair Display", serif;
-        font-size: clamp(28px, 4vw, 42px);
-        color: #2d1b3d;
-        font-weight: 100;
-        margin: 0;
-    }
+.titulo-2{
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #2d1b3d;
+    font-weight: 100;
+    margin: 0;
+}
 
 .acercade-left{
     border: solid #f0e4f0 1px;
@@ -439,9 +517,8 @@ main{
 .proyecto{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin: 20px 0;
     max-width: 49%;
-    min-width: 280px;
     flex: 1;
 }
 
@@ -470,6 +547,7 @@ main{
 .articulo{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background: #f0e4f0;
     border: solid #a87cc0 1px;
     border-radius: 14px;
@@ -673,10 +751,6 @@ footer{
         border-radius: 14px 14px 0 0;
         min-height: 180px;
     }
-
-    .detalles{
-        border-radius: 0 0 14px 14px;
-    }
 }
 
 @media (max-width: 480px){
@@ -701,8 +775,5 @@ footer{
 
     .derechos{
         flex-direction: column;
-    }
-    .articulo{
-        flex-wrap: wrap;
     }
 }
