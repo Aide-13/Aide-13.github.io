@@ -522,20 +522,15 @@ main{
 }
 
 .proyecto-secundario{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-height: auto;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    margin: 20px 0;
 }
 
 .proyecto{
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
-    max-width: 49%;
-    flex: 1;
 }
 
 .imagen-2{
